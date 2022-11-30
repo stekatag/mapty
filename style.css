@@ -1,6 +1,7 @@
 :root {
   --color-brand--1: #ffb545;
   --color-brand--2: #00c46a;
+  --color-brand--3: #ff5e5e;
 
   --color-dark--1: #2d3439;
   --color-dark--2: #42484d;
@@ -87,6 +88,28 @@ a:visited {
   font-size: 1.7rem;
   font-weight: 600;
   grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout__delete {
+  background: var(--color-dark--1);
+  padding: 0.25rem 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.25s;
+}
+
+.workout__delete:hover,
+.workout__delete:active {
+  background: var(--color-brand--3);
+  transform: scale(0.95);
+}
+
+.workout__delete:active {
+  background: var(--color-dark--1);
+  transform: scale(1);
 }
 
 .workout__details {
@@ -188,10 +211,111 @@ a:visited {
   color: var(--color-light--2);
 }
 
+/* OVERLAYS */
+.msg-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.msg-container {
+  background: var(--color-dark--2);
+  color: #ffffff;
+  padding: 2.5rem;
+  position: relative;
+  border-radius: 5px;
+}
+
+.msg-btnClose {
+  background: var(--color-brand--3);
+  color: #ffffff;
+  padding: 0.75rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.msg-btnClose:hover,
+.msg-btnClose:focus {
+  background: #fb8b8b;
+}
+
+.msg-heading {
+  font-size: 2.5rem;
+  user-select: none;
+}
+
+.msg-text {
+  font-size: 1.5rem;
+  user-select: none;
+  white-space: pre;
+}
+
+.toast-container {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 0.5rem 2rem;
+  z-index: 99;
+  background: var(--color-brand--2);
+  border-radius: 5px;
+  animation: toastUp 0.5s linear;
+}
+
+@keyframes toastUp {
+  0% {
+    transform: translateY(35%);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-text {
+  /* font-weight: 700; */
+  font-size: 2em;
+}
+
+.btn--clear-all {
+  margin: 1.5rem 0 1.5rem 0;
+  width: 40%;
+  align-self: center;
+  cursor: pointer;
+  background: var(--color-brand--3);
+  padding: 1rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: white;
+  transition: all 0.25s;
+}
+
+.btn--clear-all:hover,
+.btn--clear-all:active {
+  background: var(--color-brand--3);
+  filter: brightness(120%);
+}
+
+.btn--clear-all:active {
+  filter: brightness(100%);
+}
+
 /* MAP */
 #map {
   flex: 1;
   height: 100%;
+  z-index: 98;
   background-color: var(--color-light--1);
 }
 
