@@ -54,3 +54,22 @@
     height: 3rem;
   }
 }
+
+/* FIX FOR SMALLER HEIGHTS */
+@media (max-height: 24em) {
+  body {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    height: 100%;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .workout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
