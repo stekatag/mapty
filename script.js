@@ -79,6 +79,7 @@ class App {
   #mapEvent;
   #workouts = [];
   #markers = [];
+  #currentLocation;
   #msgShow = false;
 
   constructor() {
@@ -116,6 +117,7 @@ class App {
     console.log(`https://www.google.pt/maps/@${latitude},${longitude}`);
 
     const coords = [latitude, longitude];
+    this.#currentLocation = position;
 
     this.#map = L.map('map').setView(coords, this.#mapZoomLevel);
 
@@ -126,7 +128,11 @@ class App {
     // Handling clicks on map
     this.#map.on("click", this._showForm.bind(this));
 
-    this._toastMessage("app loaded");
+    // Cosmetic message
+    this._toastMessage("App loaded");
+
+    // Rendering current location marker
+    this._renderCurrentLocationMarker(this.#currentLocation);
 
     this.#workouts.forEach(work => {
       this._renderWorkoutMarker(work);
@@ -283,6 +289,25 @@ class App {
       .setPopupContent(
         `${workout.type === "running" ? "🏃‍♂️" : "🚴‍♀️"} ${workout.description}`
       )
+      .openPopup();
+  }
+
+  _renderCurrentLocationMarker(position) {
+    const { latitude } = position.coords;
+    const { longitude } = position.coords;
+
+    const coords = [latitude, longitude];
+    L.marker(coords)
+      .addTo(this.#map)
+      .bindPopup(
+        L.popup({
+          maxWidth: 250,
+          minWidth: 100,
+          autoClose: false,
+          closeOnClick: false,
+        })
+      )
+      .setPopupContent(`📍 Current Location`)
       .openPopup();
   }
 
