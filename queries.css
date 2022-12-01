@@ -1,0 +1,56 @@
+@media (max-width: 64em) {
+  .sidebar {
+    padding: 1.5rem;
+    flex-basis: 44rem;
+  }
+
+  .leaflet-popup-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 56em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 47em) {
+
+  body {
+    flex-direction: column-reverse;
+  }
+
+  .sidebar {
+    flex-basis: 48%;
+    height: 48%;
+  }
+
+  .logo {
+    height: 4rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+/* PHONES */
+@media (max-width: 37em) {
+  .form {
+    width: 100%;
+    height: auto;
+  }
+
+  .copyright {
+    font-size: 1rem;
+  }
+}
+
+/* SMALLER PHONES */
+@media (max-width: 21em) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    height: 3rem;
+  }
+}
