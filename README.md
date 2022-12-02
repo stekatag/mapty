@@ -9,6 +9,7 @@ Check out the live demo [here](https://stekatag.github.io/mapty/)<br>
 This is a simple app that allows you to track your workouts. You can add a new workout by clicking on the map or by entering the data manually. You can also edit and delete workouts. The app uses the browser's local storage to store the data.
 
 ## 💡 Extra features
+- [x] **Fully** responsive
 - [x] Ability to **detete a workout**
 - [x] Markup and styling for new **realistic error messages**
 - [x] Markup and styling for **toast message **on app startup
