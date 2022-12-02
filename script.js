@@ -184,7 +184,7 @@ class App {
     msgBtnClose.textContent = "X";
 
     msgHeading.classList.add("msg-heading");
-    msgHeading.textContent = "Error";
+    msgHeading.textContent = "⚠️ Error";
 
     msgText.classList.add("msg-text");
     msgText.textContent = msg;

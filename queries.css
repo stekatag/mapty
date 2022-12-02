@@ -1,3 +1,4 @@
+/* SMALLER DESKTOPS */
 @media (max-width: 64em) {
   .sidebar {
     padding: 1.5rem;
@@ -15,8 +16,8 @@
   }
 }
 
+/* TABLETS */
 @media (max-width: 47em) {
-
   body {
     flex-direction: column-reverse;
   }
@@ -41,6 +42,14 @@
 
   .copyright {
     font-size: 1rem;
+  }
+
+  .msg-container {
+    padding: 2.5rem;
+  }
+
+  .msg-heading {
+    font-size: 2.5rem;
   }
 }
 
